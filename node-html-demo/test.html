@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Socket.IO Example</title>
+  <!-- 引入 Socket.IO 的 JavaScript 客户端库 -->
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  
+  <h1>Socket.IO Example</h1>
+  
+  <script>
+    // 连接 Socket.IO 服务端
+    const socket = io('http://localhost:8888');
+
+    // 向服务端发送消息
+    socket.emit('message', 'Hello, Socket.IO!');
+    
+    // 监听来自服务端的消息
+    socket.on('message', (data) => {
+      console.log('Received:', data);
+    });
+  </script>
+  
+</body>
+</html>
